@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".LightColorFilterDemo"/>
-        <activity android:name=".PorterDuffColorFilterDemo"/>
+        <activity android:name=".PorterDuff.PorterDuffColorFilter.PorterDuffColorFilterDemo1"/>
+        <activity android:name=".PorterDuff.PorterDuffXfermode.PorterDuffXfermodeDemo1"/>
     </application>
 
 </manifest>

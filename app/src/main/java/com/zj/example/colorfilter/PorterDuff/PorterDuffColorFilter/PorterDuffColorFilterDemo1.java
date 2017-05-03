@@ -1,18 +1,19 @@
-package com.zj.example.colorfilter;
+package com.zj.example.colorfilter.PorterDuff.PorterDuffColorFilter;
 
 import android.graphics.Color;
-import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
+import com.zj.example.colorfilter.R;
+
 /**
  *
  * Created by zhengjiong on 15/11/10.
  */
-public class PorterDuffColorFilterDemo extends AppCompatActivity {
+public class PorterDuffColorFilterDemo1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/radiogroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="6dp"
+                android:checked="true"
+                android:text="none" />
+
+            <RadioButton
+                android:id="@+id/rb_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="6dp"
+                android:text="DST" />
+            <RadioButton
+                android:id="@+id/rb_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="6dp"
+                android:text="SRC" />
+            <RadioButton
+                android:id="@+id/rb_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="6dp"
+                android:text="SRC_IN" />
+            <RadioButton
+                android:id="@+id/rb_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="6dp"
+                android:text="DST_IN" />
+            <RadioButton
+                android:id="@+id/rb_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="6dp"
+                android:text="DST_OVER " />
+
+        </RadioGroup>
+        <com.zj.example.colorfilter.PorterDuff.PorterDuffXfermode.view.PorterDuffXfermodeView1
+            android:id="@+id/portduffview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+</ScrollView>

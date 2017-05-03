@@ -8,15 +8,23 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.zj.example.colorfilter.PorterDuff.PorterDuffColorFilter.PorterDuffColorFilterDemo1;
+import com.zj.example.colorfilter.PorterDuff.PorterDuffXfermode.PorterDuffXfermodeDemo1;
+
 /**
  * ColorMatrixDemo
  * http://blog.csdn.net/aigestudio/article/details/41316141
- *
+ * <p>
  * Created by zhengjiong on 15/11/9.
  */
 public class ListActivity extends AppCompatActivity {
 
-    private String[] items = new String[]{"ColorMatrixColorFilter Demo", "LightColorFilter Demo", "PorterDuffColorFilter Demo"};
+    private String[] items = new String[]{
+            "ColorMatrixColorFilter Demo",
+            "LightColorFilter Demo",
+            "PorterDuffColorFilter Demo1",
+            "PorterDuffXfermodeDemo1 Demo1"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +33,13 @@ public class ListActivity extends AppCompatActivity {
 
 
         ListView listView = (ListView) findViewById(R.id.listview);
-        listView.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, items));
+        listView.setAdapter(
+                new ArrayAdapter(
+                        this,
+                        android.R.layout.simple_list_item_1,
+                        android.R.id.text1, items
+                )
+        );
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -38,7 +52,10 @@ public class ListActivity extends AppCompatActivity {
                         startActivity(new Intent(ListActivity.this, LightColorFilterDemo.class));
                         break;
                     case 2:
-                        startActivity(new Intent(ListActivity.this, PorterDuffColorFilterDemo.class));
+                        startActivity(new Intent(ListActivity.this, PorterDuffColorFilterDemo1.class));
+                        break;
+                    case 3:
+                        startActivity(new Intent(ListActivity.this, PorterDuffXfermodeDemo1.class));
                         break;
                 }
             }
