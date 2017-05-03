@@ -18,11 +18,17 @@ public class ColorMatrixColorFilterDemo extends AppCompatActivity {
         ImageView imageView3 = (ImageView) findViewById(R.id.img_3);
 
         //颜色变暗效果
-        ColorMatrix colorMatrix1 = new ColorMatrix(new float[]{
+        /*ColorMatrix colorMatrix1 = new ColorMatrix(new float[]{
                 0.5F, 0, 0, 0, 0,
                 0, 0.5F, 0, 0, 0,
                 0, 0, 0.5F, 0, 0,
                 0, 0, 0, 1, 0,
+        });*/
+        ColorMatrix colorMatrix1 = new ColorMatrix(new float[]{
+                0.01F, 0, 0, 0, 0,
+                0, 0.01F, 0, 0, 0,
+                0, 0, 0.01F, 0, 0,
+                0, 0, 0, 1F, 0,
         });
 
         //变透明
