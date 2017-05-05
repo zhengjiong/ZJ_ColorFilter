@@ -21,6 +21,7 @@
         <activity android:name=".PorterDuff.PorterDuffColorFilter.PorterDuffColorFilterDemo1"/>
         <activity android:name=".PorterDuff.PorterDuffXfermode.PorterDuffXfermodeDemo1"/>
         <activity android:name=".PorterDuff.PorterDuffXfermode.PorterDuffXfermodeDemo2"/>
+        <activity android:name=".PorterDuff.PorterDuffXfermode.PorterDuffXfermodeDemo3"/>
     </application>
 
 </manifest>

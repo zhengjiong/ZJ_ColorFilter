@@ -68,7 +68,7 @@ public class PorterDuffXfermodeView2 extends View {
             @Override
             public void run() {
                 while (true) {
-                    SystemClock.sleep(15);
+                    SystemClock.sleep(10);
                     mRedRectDst.top = mRedRectDst.top - 1;
                     if (mRedRectDst.top <= 0) {
                         break;
