@@ -8,8 +8,10 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.View;
 
 import com.zj.example.colorfilter.R;
@@ -30,6 +32,8 @@ public class PorterDuffXfermodeView3 extends View {
 
     private Rect mCircleSrcRect;
     private Rect mCircleDstRect;
+    private int mLeft;
+    private int speed;
 
     public PorterDuffXfermodeView3(Context context) {
         this(context, null);
@@ -41,6 +45,7 @@ public class PorterDuffXfermodeView3 extends View {
 
     public PorterDuffXfermodeView3(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        speed = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, context.getResources().getDisplayMetrics());
 
         mWavePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mWavePaint.setDither(true);
@@ -52,6 +57,21 @@ public class PorterDuffXfermodeView3 extends View {
 
         mWaveBitmap = ((BitmapDrawable) getResources().getDrawable(R.mipmap.wave_2000)).getBitmap();
         mCircleBitmap = ((BitmapDrawable) getResources().getDrawable(R.mipmap.circle_500)).getBitmap();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+
+                    mLeft += speed;
+                    if (mLeft > mWaveBitmap.getWidth()) {
+                        mLeft = 0;
+                    }
+                    SystemClock.sleep(30);
+                    postInvalidate();
+                }
+            }
+        }).start();
     }
 
     @Override
@@ -59,6 +79,20 @@ public class PorterDuffXfermodeView3 extends View {
         super.onDraw(canvas);
 
         int saveCount = canvas.saveLayer(0, 0, getMeasuredWidth(), getMeasuredHeight(), null, Canvas.ALL_SAVE_FLAG);
+
+        /*mWaveSrcRect.set(
+                mLeft,
+                0,
+                mLeft + mCircleBitmap.getWidth(),
+                mWaveBitmap.getHeight()
+        );*/
+
+        mWaveSrcRect.set(
+                mLeft,
+                0,
+                mLeft + getMeasuredWidth()/2,
+                getMeasuredHeight()
+        );
 
         //先绘制的是dst目标图
         canvas.drawBitmap(mWaveBitmap, mWaveSrcRect, mWaveDstRect, mWavePaint);
