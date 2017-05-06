@@ -9,9 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.zj.example.colorfilter.PorterDuff.PorterDuffColorFilter.PorterDuffColorFilterDemo1;
-import com.zj.example.colorfilter.PorterDuff.PorterDuffXfermode.PorterDuffXfermodeDemo1;
-import com.zj.example.colorfilter.PorterDuff.PorterDuffXfermode.PorterDuffXfermodeDemo2;
-import com.zj.example.colorfilter.PorterDuff.PorterDuffXfermode.PorterDuffXfermodeDemo3;
 
 /**
  * ColorMatrixDemo
@@ -24,10 +21,7 @@ public class ListActivity extends AppCompatActivity {
     private String[] items = new String[]{
             "ColorMatrixColorFilter Demo",
             "LightColorFilter Demo",
-            "PorterDuffColorFilter Demo1",
-            "PorterDuffXfermode Demo1",
-            "PorterDuffXfermode Demo2",
-            "PorterDuffXfermode Demo3"
+            "PorterDuffColorFilter Demo1"
     };
 
     @Override
@@ -57,16 +51,6 @@ public class ListActivity extends AppCompatActivity {
                         break;
                     case 2:
                         startActivity(new Intent(ListActivity.this, PorterDuffColorFilterDemo1.class));
-                        break;
-                    case 3:
-                        startActivity(new Intent(ListActivity.this, PorterDuffXfermodeDemo1.class));
-                        break;
-                    case 4:
-                        startActivity(new Intent(ListActivity.this, PorterDuffXfermodeDemo2.class));
-                        break;
-                    case 5:
-                        startActivity(new Intent(ListActivity.this, PorterDuffXfermodeDemo3.class));
-
                         break;
                 }
             }
